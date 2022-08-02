@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**")
                 .authenticated()
                 .antMatchers("/admin/**")
-                .hasRole(EnumRole.ADMIN.name())
+                .hasRole("ADMIN")
                 .and()
                 .formLogin()
                 .successHandler(successUserHandler)
