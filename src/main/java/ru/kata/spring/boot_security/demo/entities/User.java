@@ -7,7 +7,6 @@ import java.util.Collection;
 
 @Getter
 @Setter
-@ToString
 @RequiredArgsConstructor
 @Entity
 @Table(name = "users")
@@ -27,7 +26,6 @@ public class User{
     @JoinTable(name = "users_has_roles",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "roleId"))
-    @ToString.Exclude
     private Collection<Role> roles;
 
 }

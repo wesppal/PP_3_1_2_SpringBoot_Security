@@ -12,11 +12,11 @@ public class Role implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id", nullable = false)
     private int id;
-//    @Enumerated(EnumType.STRING)
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private EnumRole role;
 
 
-    public Role(int id, String role) {
+    public Role(int id, EnumRole role) {
         this.id = id;
         this.role = role;
     }
@@ -26,6 +26,6 @@ public class Role implements GrantedAuthority {
 
     @Override
     public String getAuthority() {
-        return role;
+        return role.name();
     }
 }
